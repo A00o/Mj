@@ -1,0 +1,28 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+
+<body style="z-index:9999999999999999999999999999;background:#000000;margin:0px;padding:0px" >  <div id='player'></div>
+
+<script>
+	
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+      mediacontrol: {
+      seekbar: "#567",
+      buttons: "#567"
+      },
+ height: "100%",
+ width: "100%",
+autoPlay:true,
+mute:true,
+  plugins: {
+    'core': [LevelSelector]
+    },
+	xhrSetup: function(xhr, url) {
+		xhr.withCredentials = false;
+	}
+});
+player.attachTo(playerElement);
+player.load({source: 'https://cdn2.jazztv.pk:8087/testyolo/SAMAA-173/playlist.m3u8', mimeType: ''});player.play();
+
+</script>
